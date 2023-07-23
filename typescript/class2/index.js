@@ -1,9 +1,8 @@
 "use strict";
-const firstName = "Jahanzaib";
+let firstName = "Jahanzaib";
 let lastName;
 let first1 = "Ali";
 let first$ = "Kamran";
-
 firstName = "Ali";
 console.log(firstName);
 // //type annotations
