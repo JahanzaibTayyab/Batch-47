@@ -1,11 +1,11 @@
 "use strict";
-// // let x;
-// // console.log(x);
+// let x;
+// console.log(x);
 Object.defineProperty(exports, "__esModule", { value: true });
-// // //null value
-// // let specialValue = null;
-// // console.log(specialValue);
-// //template literal
+// //null value
+// let specialValue = null;
+// console.log(specialValue);
+//template literal
 // let firstName = "Jahanzaib";
 // let lastName = "Tayyab";
 // let fullName = "Hello" + firstName;
@@ -25,12 +25,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // console.log("typeOf", typeof firstName);
 // console.log("typeOf", typeof num);
 // console.log("typeOf", typeof condition);
-// //arithmetic operator
-// //Sum Addition +
-// //Subtraction -
-// //Multiplication *
-// //Division /
-// //Modulus %
+//arithmetic operator
+//Sum Addition +
+//Subtraction -
+//Multiplication *
+//Division /
+//Modulus %
 // //write a program to add Numbers
 // let n1 = 5;
 // let n2 = 6;
@@ -96,3 +96,22 @@ else if (n == 6) {
 else {
     console.log("Allah ka hukam");
 }
+let age = 16;
+if (age >= 0 && age < 18) {
+    console.log("Teenagers");
+}
+else if (age >= 18 && age < 40) {
+    console.log("Younger");
+}
+else {
+    console.log("Old");
+}
+let num = 337;
+if (num % 2 == 0) {
+    console.log("Even");
+}
+else {
+    console.log("Odd");
+}
+//
+let alph = "a";
