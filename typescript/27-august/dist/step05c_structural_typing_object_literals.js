@@ -9,6 +9,7 @@ console.log("🚀 ~ file: step05c_structural_typing_object_literals.ts:24 ~ sphe
 ball = sphere;
 console.log("🚀 ~ file: step05c_structural_typing_object_literals.ts:26 ~ ball:", ball);
 let tube = { diameter: 12, length: 3 };
+//let ball: Ball = { diameter: 10 };
 //tube = ball;//Error
 ball = tube;
 console.log("🚀 ~ file: step05c_structural_typing_object_literals.ts:47 ~ ball:", ball);
@@ -28,13 +29,13 @@ let myType = { name: "Zia", id: 1 };
 //Case 1
 myType = { id: 2, name: "Tom" };
 myType = { id: 3, name: "Jahanzaib" };
-var x; //Note now 'x' can have any name, just that the property should be of type string
+let x; //Note now 'x' can have any name, just that the property should be of type string
 x = { id: 1, fullname: "Zia khan" }; // Ok, `fullname` matched by index signature
-x = { id: 1, age: 60 };
-x = { id: 1, firstName: "Zia", lastName: "Khan" };
+x = { id: 2, age: 60 };
+x = { id: 3, firstName: "Zia", lastName: "Khan", age: 60 };
 console.log("🚀 ~ file: step05c_structural_typing_object_literals.ts:91 ~ x:", x);
 //Case 3
-//myType = { id: 2, name: "Tom", age: 22 }; //Case 3: Error, excess property
+// myType = { id: 2, name: "Tom", age: 22 }; //Case 3: Error, excess property
 //=================================================
 //Case when STALE object literal are assigned to a variable
 let myType2 = { id: 2, name: "Tom" };
@@ -52,6 +53,7 @@ x = y; // Ok, `fullname` matched by index signature
 var myType4 = { id: 2, name: "Tom", age: 22 };
 //Case 3
 myType = myType4; //Case 3: Ok, excess property allowed in case of stale object which is different from fresh object
+//myType4=myType // Error
 let error1;
 //error1 = { foo: 1, baz: 2 }; // Error, excess property `baz`
 var error2;

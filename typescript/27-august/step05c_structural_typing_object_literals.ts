@@ -35,13 +35,14 @@ console.log(
 // the members of Ball and Sphere, then it also can be
 // set to be a ball or sphere.
 
-interface Tube {
+type Tube = {
   diameter: number;
   length: number;
-}
+};
 
 let tube: Tube = { diameter: 12, length: 3 };
 
+//let ball: Ball = { diameter: 10 };
 //tube = ball;//Error
 ball = tube;
 console.log(
@@ -76,7 +77,7 @@ myType = { id: 3, name: "Jahanzaib" };
 
 //Case 2a
 //myType = { id: 2, name_person: "Tom", name: "zia Khan" }; //Case 2a: Error, renamed or missing property
-
+//myType = myType3;
 //Case 2b
 //A type can include an index signature to explicitly indicate that excess properties are permitted in with fresh objects:
 
@@ -85,18 +86,18 @@ type IndexSignature = {
   [key: string]: any;
 };
 
-var x: IndexSignature; //Note now 'x' can have any name, just that the property should be of type string
+let x: IndexSignature; //Note now 'x' can have any name, just that the property should be of type string
 
 x = { id: 1, fullname: "Zia khan" }; // Ok, `fullname` matched by index signature
-x = { id: 1, age: 60 };
-x = { id: 1, firstName: "Zia", lastName: "Khan" };
+x = { id: 2, age: 60 };
+x = { id: 3, firstName: "Zia", lastName: "Khan", age: 60 };
 console.log(
   "🚀 ~ file: step05c_structural_typing_object_literals.ts:91 ~ x:",
   x
 );
 
 //Case 3
-//myType = { id: 2, name: "Tom", age: 22 }; //Case 3: Error, excess property
+// myType = { id: 2, name: "Tom", age: 22 }; //Case 3: Error, excess property
 
 //=================================================
 
@@ -123,7 +124,7 @@ var myType4 = { id: 2, name: "Tom", age: 22 };
 
 //Case 3
 myType = myType4; //Case 3: Ok, excess property allowed in case of stale object which is different from fresh object
-
+//myType4=myType // Error
 let error1: { foo: number };
 //error1 = { foo: 1, baz: 2 }; // Error, excess property `baz`
 
