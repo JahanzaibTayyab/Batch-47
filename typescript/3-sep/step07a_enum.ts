@@ -10,6 +10,8 @@ enum Color1 {
   Green,
   Blue,
 }
+// const array=[1,2,3,4,5]
+//console.log(array[0])
 var colorName: string = Color1[2];
 console.log(colorName);
 
@@ -26,4 +28,4 @@ enum Status {
   passOut = "passOut",
 }
 
-//console.log(staus==Status.Progress);
+console.log(Status);

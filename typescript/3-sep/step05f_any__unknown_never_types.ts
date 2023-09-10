@@ -59,3 +59,9 @@ function fail() {
 function infiniteLoop(): never {
   while (true) {}
 }
+
+let val5: unknown = true;
+let val6: boolean = true;
+//val5 = val6;
+//val6 = val5;
+console.log("🚀 ~ file: yhiWala chla ha ts:67 ~ val5:", val5);

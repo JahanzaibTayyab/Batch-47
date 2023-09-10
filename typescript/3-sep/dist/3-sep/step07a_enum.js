@@ -6,13 +6,15 @@ var Color;
     Color[Color["Green"] = 1] = "Green";
     Color[Color["Blue"] = 2] = "Blue";
 })(Color || (Color = {})); //starts with 0
-var c = Color.Green;
+var c = Color.Red;
 var Color1;
 (function (Color1) {
-    Color1[Color1["Red"] = 1] = "Red";
-    Color1[Color1["Green"] = 2] = "Green";
-    Color1[Color1["Blue"] = 3] = "Blue";
+    Color1[Color1["Red"] = 5] = "Red";
+    Color1[Color1["Green"] = 6] = "Green";
+    Color1[Color1["Blue"] = 7] = "Blue";
 })(Color1 || (Color1 = {}));
+// const array=[1,2,3,4,5]
+//console.log(array[0])
 var colorName = Color1[2];
 console.log(colorName);
 var Color2;
@@ -28,4 +30,4 @@ var Status;
     Status["Progress"] = "progress";
     Status["passOut"] = "passOut";
 })(Status || (Status = {}));
-//console.log(staus==Status.Progress);
+console.log(Status);

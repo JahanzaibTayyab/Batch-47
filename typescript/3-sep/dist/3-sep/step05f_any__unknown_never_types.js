@@ -49,3 +49,7 @@ function fail() {
 function infiniteLoop() {
     while (true) { }
 }
+let val5 = 6;
+let val6 = true;
+val6 = val5;
+console.log("🚀 ~ file: yhiWala chla ha ts:67 ~ val5:", val5);
