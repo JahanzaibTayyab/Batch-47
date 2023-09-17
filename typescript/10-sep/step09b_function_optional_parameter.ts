@@ -18,3 +18,7 @@ const buildName1: (firstName: string, lastName?: string) => string = function (
   if (lastName) return firstName + " " + lastName;
   else return firstName ?? "";
 };
+
+const classTest = (firstName: string, lastName?: string) => {};
+
+const classTest2 = (firstName: string, lastName = "Khan") => {};
