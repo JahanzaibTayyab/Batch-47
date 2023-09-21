@@ -98,7 +98,7 @@ Modern JavaScript and TypeScript development often employs other patterns like P
 
 Callbacks are a fundamental concept in TypeScript and are widely used in various libraries, frameworks, and APIs to manage asynchronous code execution. However, they can lead to callback hell, making the code harder to read and maintain. To address this issue, modern JavaScript and TypeScript development often employs other patterns like Promises and async/await for handling asynchronous code more elegantly.
 
-### Promises in JavaScript/Typescript
+# Promises in JavaScript/Typescript
 
 **Promises** are a more modern and structured way to handle asynchronous operations and manage the flow of asynchronous code in JavaScript. They provide a cleaner and more readable alternative to using callbacks for handling asynchronous tasks. Promises represent a value that may not be available yet but will be resolved (fulfilled) or rejected (failed) in the future, allowing you to attach callbacks to handle these cases.
 
