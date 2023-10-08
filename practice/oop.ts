@@ -22,9 +22,9 @@ tesla.drive(); // The Car has started Driving!
 
 // inheritance
 
-class Person {
+abstract class Person {
   name: string;
-  protected age: number;
+  age: number;
   constructor(name: string, age: number) {
     this.name = name;
     this.age = age;
@@ -37,6 +37,33 @@ class Person {
   }
 }
 
+class Person1 {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+  eat() {
+    console.log(`What's for dinner?`);
+  }
+  speak() {
+    console.log(`My name is ${this.name}, I am ${this.age} years old`);
+  }
+}
+//overloads
+// function add(x: number, y: number);
+// function add(x: string, y: number);
+// function add(x: number, y: number, z: number);
+// function add(x: number, y: number, z: number, a: number);
+// function add(x: string, y: string);
+
+// function add(x: any, y: any, z: any, a: any) {
+//   return x + y + z + a;
+// }
+
+// add(3, 5, 7, 8, 6);
 class Chef extends Person {
   occupation: string;
   constructor(name: string, age: number, occupation: string) {
@@ -44,8 +71,8 @@ class Chef extends Person {
     this.occupation = occupation;
   }
   speak(): void {
-    super.age
-    super.speak();
+    // super.age;
+    //super.speak();
     console.log(`My name is ${this.name}, I am a ${this.occupation} `);
   }
   cook() {
@@ -53,10 +80,40 @@ class Chef extends Person {
   }
 }
 
-const person = new Person("Jahanzaib", 24);
+class Student extends Person {
+  occupation: string;
+  private student_status: string;
+
+  constructor(name: string, age: number, occupation: string) {
+    super(name, age);
+    this.occupation = occupation;
+    this.student_status = "Enrolled";
+  }
+
+  get studentStatus(): string {
+    return this.student_status;
+  }
+  set studentStatus(status: string) {
+    this.student_status = status;
+  }
+
+  speak2(): void {
+    console.log(`I am Student`);
+  }
+  cook() {
+    console.log(`I am cooking`);
+  }
+}
+
+//const person = new Person("Jahanzaib", 24);
 
 const chef = new Chef("Jahanzaib", 24, "Chef");
-console.log(chef.);
+const student = new Student("Jahanzaib", 24, "Student");
+console.log("🚀 ~ file: oop.ts:112 ~ student:", student);
+console.log(student.studentStatus);
+student.studentStatus = "PassOut";
+student.occupation = "Fail Student";
+console.log("🚀 ~ file: oop.ts:112 ~ student:", student);
 
 class Human {
   name: string;
@@ -79,3 +136,19 @@ class Doctor extends Person implements Human {
     return "I am a doctor";
   }
 }
+
+class A {
+  name: string = "Class A";
+  print() {
+    console.log("I am class A");
+  }
+}
+class B extends A {
+  name: string = "Class B";
+  print() {
+    console.log("I am class B");
+  }
+}
+
+const b = new B();
+console.log(b.name);
