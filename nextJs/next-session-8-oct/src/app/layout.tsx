@@ -23,7 +23,7 @@ export default function RootLayout({
           <Link href="/dashboard">Dashboard</Link>
           <Link href="/dashboard/settings">Settings</Link>
           <Link href="/blog">Blog</Link>
-          <Link href="contact-us">Contact Us</Link>
+          <a href="/contact-us">Contact Us</a>
         </header>
         {children}
         <footer className="bg-gray-500 flex justify-center py-5">
