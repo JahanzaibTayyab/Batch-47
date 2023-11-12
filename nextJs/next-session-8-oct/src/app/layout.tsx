@@ -23,12 +23,14 @@ export default function RootLayout({
           <Link href="/dashboard">Dashboard</Link>
           <Link href="/dashboard/settings">Settings</Link>
           <Link href="/blog">Blog</Link>
-          <a href="/contact-us">Contact Us</a>
+          <Link href="/contact-us">Contact Us</Link>
+          <Link href="/new">12-Nov</Link>
         </header>
         {children}
         <footer className="bg-gray-500 flex justify-center py-5">
           <p>&copy; 2023 - All rights reserved.</p>
         </footer>
+        `
       </body>
     </html>
   );
