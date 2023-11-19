@@ -25,6 +25,7 @@ export default function RootLayout({
           <Link href="/blog">Blog</Link>
           <Link href="/contact-us">Contact Us</Link>
           <Link href="/new">12-Nov</Link>
+          <Link href="/react">React</Link>
         </header>
         {children}
         <footer className="bg-gray-500 flex justify-center py-5">
