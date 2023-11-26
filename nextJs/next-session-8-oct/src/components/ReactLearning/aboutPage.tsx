@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+
 function AboutPage() {
   return (
     <>

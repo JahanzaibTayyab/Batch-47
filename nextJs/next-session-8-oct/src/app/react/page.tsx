@@ -3,6 +3,8 @@ import AboutPage from "@/components/ReactLearning/aboutPage";
 import Profile from "@/components/ReactLearning/Profile";
 import ConditionalRendering from "@/components/ReactLearning/conditionalRendering";
 import ShoppingList from "@/components/ReactLearning/RenderingList";
+import { UpdateUI } from "@/components/ReactLearning/UpdateUI";
+import { UpdateUIProps } from "@/components/ReactLearning/UpdateUIProps";
 const ReactLearning = () => {
   const user = {
     name: "Jahanzaib Tayab",
@@ -35,6 +37,18 @@ const ReactLearning = () => {
       <div className="bg-yellow-100 p-5">
         Rendering List
         <ShoppingList />
+      </div>
+      <div className="bg-yellow-600 p-5">
+        Update State List
+        <div className="flex justify-center items-center">
+          <UpdateUI />
+        </div>
+      </div>
+      <div className="bg-yellow-600 p-5">
+        Update State and Props (to pass values from patent to child)
+        <div className="flex justify-center items-center">
+          <UpdateUIProps propValue={100} value1={20} value2={50} />
+        </div>
       </div>
     </div>
   );
