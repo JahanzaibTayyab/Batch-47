@@ -25,3 +25,15 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+button {
+ @apply border-2 p-20 m-10
+}
+
+.green-btn {
+  @apply border-green-600
+}
+
+#btn-3 {
+  @apply text-purple-600 text-5xl
+}
