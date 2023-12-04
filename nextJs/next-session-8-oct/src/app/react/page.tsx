@@ -5,6 +5,8 @@ import ConditionalRendering from "@/components/ReactLearning/conditionalRenderin
 import ShoppingList from "@/components/ReactLearning/RenderingList";
 import { UpdateUI } from "@/components/ReactLearning/UpdateUI";
 import { UpdateUIProps } from "@/components/ReactLearning/UpdateUIProps";
+import ThinkingReactUI from "@/components/ReactLearning/ThinkingReactUI";
+
 const ReactLearning = () => {
   const user = {
     name: "Jahanzaib Tayab",
@@ -49,6 +51,9 @@ const ReactLearning = () => {
         <div className="flex justify-center items-center">
           <UpdateUIProps propValue={100} value1={20} value2={50} />
         </div>
+      </div>
+      <div>
+        <ThinkingReactUI />
       </div>
     </div>
   );
