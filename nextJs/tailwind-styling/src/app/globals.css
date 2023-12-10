@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .gradient {
+    @apply bg-gradient-to-r from-blue-700 to-rose-800
+  }
+}
