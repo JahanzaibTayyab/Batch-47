@@ -1,5 +1,5 @@
 .container {
-  @apply w-auto max-w-none m-14;
+  @apply w-full max-w-none m-14;
 }
 
 .team-profile {

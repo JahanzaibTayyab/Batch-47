@@ -62,10 +62,3 @@ const page = () => {
 };
 
 export default page;
-
-{
-  /* <div>
-            <button className="team-btn">Github</button>
-            <button className="team-btn">Youtube</button>
-          </div> */
-}

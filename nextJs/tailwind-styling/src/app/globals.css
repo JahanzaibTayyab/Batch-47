@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@tailwind base; /* HTML default style reset */
+@tailwind components; /* basic styling after reset */
+@tailwind utilities; /* utilties/classes to help out component styling */
+/* Pre-flight */
 
 @layer components {
   .gradient {

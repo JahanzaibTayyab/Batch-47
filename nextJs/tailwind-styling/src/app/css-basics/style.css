@@ -1,11 +1,11 @@
 h1 {
   border: 3px solid burlywood
-}
+} /* tag selector */
 
 .blue-head {
   background-color: cadetblue;
-}
+} /* class selector */
 
 #h0 {
   font-size: 160%;
-}
+} /* id selector */
