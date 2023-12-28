@@ -1,3 +1,5 @@
+import FlowbiteAlert from "@/components/FlowbiteAlert";
+import FlowbiteNav from "@/components/FlowbiteNav";
 import Heading from "@/components/Heading";
 import Sidebar from "@/views/Sidebar";
 import Image from "next/image";
@@ -5,6 +7,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
+      <FlowbiteNav />
       {/* Styling not applied if the directory is not added in content in tailwind.config.ts */}
       {/* <Sidebar /> */}
       <h1 className="text-sky-800 text-5xl">
@@ -40,6 +43,7 @@ export default function Home() {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </p>
+      {/* <FlowbiteAlert /> */}
     </>
   );
 }
