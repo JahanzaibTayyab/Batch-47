@@ -1,0 +1,6 @@
+API 
+CRUD
+C = Create (on Server) // POST // body (data)
+R = Read   (from Client) // GET // SearchParams // query
+U = Update (on Server) // PUT , PATCH // body (data) //if id not present in body (PUT) Create
+D = Delete (from Client) // DELETE // id

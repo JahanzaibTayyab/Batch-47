@@ -8,6 +8,9 @@ import ProfileModal from "@/components/ProfileModal";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
+      <Link href={"/blogs"} className="text-xl font-bold text-blue/500">
+        Blogs App
+      </Link>
       <Link href={"/todo"} className="text-xl font-bold text-blue/500">
         Todo App
       </Link>
