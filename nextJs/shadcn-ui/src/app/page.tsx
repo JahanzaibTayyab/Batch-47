@@ -14,6 +14,9 @@ export default function Home() {
       <Link href={"/todo"} className="text-xl font-bold text-blue/500">
         Todo App
       </Link>
+      <Link href={"/contact-us"} className="text-xl font-bold text-blue/500">
+        Contact Us (with Validation)
+      </Link>
       <div>Hello i am shadcn UI</div>
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
         Taxing Laughter: The Joke Tax Chronicles
