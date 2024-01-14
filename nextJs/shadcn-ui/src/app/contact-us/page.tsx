@@ -1,9 +1,5 @@
 "use client";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -13,11 +9,18 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/components/ui/use-toast";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const FormSchema = z.object({
-  fullName: z.string().max(10, {
-    message: "FullName at least 10 Chart",
+  fullName: z.string().min(10, {
+    message: "Fullname Required",
   }),
   email: z.string().email("Email required"),
   subject: z.string().min(4, {
@@ -27,7 +30,6 @@ const FormSchema = z.object({
     message: "Message is Required",
   }),
 });
-const submitData = () => {};
 
 function ContactUs() {
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -41,79 +43,82 @@ function ContactUs() {
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log("🚀 ~ file: page.tsx:45 ~ onSubmit ~ data:", data);
+    console.log("🚀 ~ onSubmit ~ data:", data);
+
+    toast({
+      title: "You submitted the following values:",
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+        </pre>
+      ),
+    });
   }
 
   return (
     <div className="flex items-center justify-center p-12">
       <div className="mx-auto w-full max-w-[550px]">
-        <form onSubmit={submitData}>
-          <div className="mb-5">
-            <label
-              htmlFor="name"
-              className="mb-3 block text-base font-medium text-[#07074D]"
-            >
-              Full Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Full Name"
-              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <FormField
+              control={form.control}
+              name="fullName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Full Name</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Full Name"
+                      {...field}
+                      className="rounded-sm"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
-          <div className="mb-5">
-            <label
-              htmlFor="email"
-              className="mb-3 block text-base font-medium text-[#07074D]"
-            >
-              Email Address
-            </label>
-            <input
-              type="email"
+            <FormField
+              control={form.control}
               name="email"
-              id="email"
-              placeholder="example@domain.com"
-              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Email" type={"email"} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
-          <div className="mb-5">
-            <label
-              htmlFor="subject"
-              className="mb-3 block text-base font-medium text-[#07074D]"
-            >
-              Subject
-            </label>
-            <input
-              type="text"
+            <FormField
+              control={form.control}
               name="subject"
-              id="subject"
-              placeholder="Enter your subject"
-              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Subject</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Subject" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
-          <div className="mb-5">
-            <label
-              htmlFor="message"
-              className="mb-3 block text-base font-medium text-[#07074D]"
-            >
-              Message
-            </label>
-            <textarea
-              rows={4}
+            <FormField
+              control={form.control}
               name="message"
-              id="message"
-              placeholder="Type your message"
-              className="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-            ></textarea>
-          </div>
-          <div>
-            <button className="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none">
-              Submit
-            </button>
-          </div>
-        </form>
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Message</FormLabel>
+                  <FormControl>
+                    <Textarea placeholder="Enter your message" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Button type="submit">Submit</Button>
+          </form>
+        </Form>
       </div>
     </div>
   );
