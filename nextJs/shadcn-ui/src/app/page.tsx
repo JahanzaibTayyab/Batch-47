@@ -1,8 +1,9 @@
-import Link from "next/link";
+import { ChevronRight, Loader2, Mail } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Mail, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Link from "next/link";
 import ProfileModal from "@/components/ProfileModal";
 
 export default function Home() {
@@ -16,6 +17,9 @@ export default function Home() {
       </Link>
       <Link href={"/contact-us"} className="text-xl font-bold text-blue/500">
         Contact Us (with Validation)
+      </Link>
+      <Link href={"/dummy-website"} className="text-xl font-bold text-blue/500">
+        Dummy Website
       </Link>
       <div>Hello i am shadcn UI</div>
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
